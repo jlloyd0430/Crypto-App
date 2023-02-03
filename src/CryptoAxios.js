@@ -24,13 +24,19 @@ function CryptoAxios() {
         <button type="submit">Submit</button>
       </form>
       <p>Cryptocurrency: {crypto}</p>
+      <div className="data">
+        {/* Only shows is loading is true */}
+        {loading && <Spinner />}
+        {/* if loading is set to false, and the data exists, then it renders the ShowCryptoDetails component */}
+        {!loading && data && <ShowCryptoDetails data={data} />}
 
-      {/* Only shows is loading is true */}
-      {loading && <Spinner />}
-      {/* if loading is set to false, and the data exists, then it renders the ShowCryptoDetails component */}
-      {!loading && data && <ShowCryptoDetails data={data} />}
-
-      {error && <div>Error: {error}</div>}
+        {error && (
+          <div>
+            Error: {error} try again using only lowercase if this doesnt work,
+            check spelling
+          </div>
+        )}
+      </div>
     </div>
   );
 }

@@ -18,14 +18,15 @@ function CryptoAxios() {
 
   return (
     <div className="App">
-      <h1>Cryptocurrency Search app</h1>
-    <p>all characters must be lowercase </p>
+      <h1>A Cryptocurrency Search app!</h1>
     <form onSubmit={handleOnSubmit}>
         <input type="text" onChange={(e) => setCrypto(e.target.value)} />
         <button type="submit">Search</button>
       </form>
       <div className="data">
-        <p>Cryptocurrency: {crypto}</p>
+        <p>Cryptocurrency: {crypto}<br>
+          Note: all characters must be lowercase
+        </p>
 
         {/* Only shows is loading is true */}
         {loading && <Spinner />}

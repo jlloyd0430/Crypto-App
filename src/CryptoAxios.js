@@ -18,8 +18,9 @@ function CryptoAxios() {
 
   return (
     <div className="App">
-      <h1>A Cryptocurrency and Exchange Search app!</h1>
-      <form onSubmit={handleOnSubmit}>
+      <h1>Cryptocurrency Search app</h1>
+    <p>all characters must be lowercase </p>
+    <form onSubmit={handleOnSubmit}>
         <input type="text" onChange={(e) => setCrypto(e.target.value)} />
         <button type="submit">Search</button>
       </form>

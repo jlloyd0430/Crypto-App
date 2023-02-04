@@ -5,7 +5,7 @@ import ShowCryptoDetails from "./components/ShowCryptoDetails";
 import "./App.css";
 
 function CryptoAxios() {
-  const [crypto, setCrypto] = useState("bitcoin");
+  const [crypto, setCrypto] = useState("");
 
   const [setUrl, data, loading, setLoading, error] = useAxios();
 
@@ -24,9 +24,10 @@ function CryptoAxios() {
         <button type="submit">Search</button>
       </form>
       <div className="data">
-        <p>Cryptocurrency: {crypto}<br>
+        <p>
           Note: all characters must be lowercase
         </p>
+        <p>Cryptocurrency: {crypto}</p>
 
         {/* Only shows is loading is true */}
         {loading && <Spinner />}

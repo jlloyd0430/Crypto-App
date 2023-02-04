@@ -18,20 +18,26 @@ function CryptoAxios() {
 
   return (
     <div className="App">
-      <h1>A Cryptocurrency Search app!</h1>
-      <p>all characters must be lowercase </p>
+      <h1>A Cryptocurrency and Exchange Search app!</h1>
       <form onSubmit={handleOnSubmit}>
         <input type="text" onChange={(e) => setCrypto(e.target.value)} />
-        <button type="submit">Submit</button>
+        <button type="submit">Search</button>
       </form>
-      <p>Cryptocurrency: {crypto}</p>
+      <div className="data">
+        <p>Cryptocurrency: {crypto}</p>
 
-      {/* Only shows is loading is true */}
-      {loading && <Spinner />}
-      {/* if loading is set to false, and the data exists, then it renders the ShowCryptoDetails component */}
-      {!loading && data && <ShowCryptoDetails data={data} />}
+        {/* Only shows is loading is true */}
+        {loading && <Spinner />}
+        {/* if loading is set to false, and the data exists, then it renders the ShowCryptoDetails component */}
+        {!loading && data && <ShowCryptoDetails data={data} />}
 
-      {error && <div>Error: {error}</div>}
+        {error && (
+          <div>
+            Error: {error} try again using only lowercase if this doesnt work,
+            check spelling
+          </div>
+        )}
+      </div>
     </div>
   );
 }
